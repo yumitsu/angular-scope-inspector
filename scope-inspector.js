@@ -18,10 +18,36 @@ var scopeInspectorGetScope = function scopeInspectorGetScopeFunction() {
       return copy;
   }
 
+  function getAngularVersion(version) {
+    var intVersion = 0;
+
+    if(typeof(version) == "object") {
+      intVersion = parseInt(''+version.major+''+version.minor+''+version.dot+'');
+    }
+
+    return intVersion;
+  }
+
+  function isolateScopeAvailable(a) {
+    var version = 0;
+
+    if(typeof(a) == "object") {
+      version = getAngularVersion(a.version);
+    }
+
+    if(version > 108) {
+      return true;
+    }
+
+    return false;
+  }
+
 	if(hasAngular){
     element = angular.element($0);
 		scope = element.scope();
-    isolatedScope = element.isolateScope();	
+
+    isolatedScope = isolateScopeAvailable(angular) ? element.isolateScope() : false;	
+
     if(scope){
        copy.isIsolatedScope = isolatedScope ? true : false,
        copy.isInherited = element.hasClass('ng-scope') ? false : true,

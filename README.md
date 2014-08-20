@@ -5,8 +5,7 @@ Chrome developer toolbar extension for debugging AngularJs scope.
 
 Updated to be compatible with AngularJS v1.0.8.
 
-Installation
--------------
+# Installation
 
 1. Clone repository:
 ```
@@ -17,8 +16,11 @@ git clone https://github.com/yumitsu/angular-scope-inspector.git
 3. Enable 'Developer mode' and click 'Load unpacked extension'.
 4. Select `angular-scope-inspector` folder.
 
-Authors
--------------
+# Authors
 
 * [Yair Tavor](https://code.google.com/u/YairTavor/) - original author
 * [Alex Zinchenko](//github.com/yumitsu) - extension fix to support AngularJS v1.0.8
+
+# License
+
+[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
